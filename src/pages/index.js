@@ -1,80 +1,91 @@
-import Head from 'next/head';
-import Image from 'next/image';
+// pages/index.js
+import React from 'react';
 
-export default function Home() {
+const HomePage = () => {
   return (
-    <>
-      <Head>
-        <title>FarmGuard | Smart Farming</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="AI-Powered Crop Disease Detection and Farming Solutions" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <div className="hero">
+      <nav className="navbar">
+        <div className="logo">FarmGuard</div>
+        <ul className="nav-links">
+          <li>Home</li>
+          <li>About</li>
+          <li>Services</li>
+          <li>Portfolio</li>
+          <li>Contact</li>
+        </ul>
+        <button className="btn">Get Started</button>
+      </nav>
 
-      <main className="hero">
-        <nav className="navbar">
-          <div className="logo">FarmGuard</div>
-          <ul className="nav-links">
-            <li>Home</li>
-            <li>About</li>
-            <li>Services</li>
-            <li>Contact</li>
-          </ul>
-          <button className="btn">Get Started</button>
-        </nav>
-
-        <div className="hero-content">
-          <div className="text">
-            <h1>Smarter Solutions for Farmers</h1>
-            <p>AI-powered crop disease detection and farming insights.</p>
-            <div className="buttons">
-              <button className="btn">Get Started</button>
-              <button className="btn-outline">Watch Video</button>
-            </div>
-          </div>
-          <div className="image">
-            <Image
-              src="/hero-illustration.png"
-              alt="AI Farming"
-              width={400}
-              height={400}
-              priority
-            />
+      <div className="hero-content">
+        <div className="text">
+          <h1>Better Solutions For Your Farm</h1>
+          <p>We help farmers detect crop diseases and get expert advice instantly.</p>
+          <div className="buttons">
+            <button className="btn">Get Started</button>
+            <button className="btn-outline">Watch Demo</button>
           </div>
         </div>
-      </main>
+        <div className="image">
+          <img
+            src="/agriculture-illustration.png"
+            alt="Farm illustration"
+            style={{ maxWidth: '100%', height: 'auto' }}
+          />
+        </div>
+      </div>
 
       <style jsx>{`
         .hero {
-          background: #37517e;
-          color: white;
+          background: #2e7d32;
+          color: #f1f1f1;
           padding: 2rem;
           min-height: 100vh;
+          font-family: sans-serif;
         }
         .navbar {
           display: flex;
           justify-content: space-between;
           align-items: center;
         }
+        .logo {
+          font-weight: bold;
+          font-size: 1.5rem;
+        }
         .nav-links {
           list-style: none;
           display: flex;
           gap: 1rem;
         }
+        .nav-links li {
+          cursor: pointer;
+          transition: color 0.3s;
+        }
+        .nav-links li:hover {
+          color: #a5d6a7;
+        }
         .btn {
-          background: #47b2e4;
+          background: #66bb6a;
           border: none;
           padding: 0.5rem 1rem;
           color: white;
           border-radius: 5px;
+          transition: background 0.3s;
+        }
+        .btn:hover {
+          background: #81c784;
         }
         .btn-outline {
           background: transparent;
-          border: 1px solid #fff;
+          border: 1px solid #a5d6a7;
           padding: 0.5rem 1rem;
           margin-left: 1rem;
           color: white;
           border-radius: 5px;
+          transition: background 0.3s, color 0.3s;
+        }
+        .btn-outline:hover {
+          background: #a5d6a7;
+          color: #2e7d32;
         }
         .hero-content {
           display: flex;
@@ -83,13 +94,30 @@ export default function Home() {
           margin-top: 3rem;
           flex-wrap: wrap;
         }
+        .text {
+          flex: 1;
+          max-width: 500px;
+        }
         .text h1 {
-          font-size: 2rem;
+          font-size: 2.5rem;
+          margin-bottom: 1rem;
+        }
+        .text p {
+          font-size: 1.1rem;
+          margin-bottom: 1.5rem;
         }
         .buttons {
-          margin-top: 1.5rem;
+          display: flex;
+          align-items: center;
+        }
+        .image {
+          flex: 1;
+          padding: 1rem;
+          text-align: center;
         }
       `}</style>
-    </>
+    </div>
   );
-}
+};
+
+export default HomePage;
