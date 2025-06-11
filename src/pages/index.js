@@ -5,11 +5,13 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>FarmGuard - AI Crop Disease Detection</title>
-        <meta name="description" content="Smart solutions for agriculture using AI" />
+        <title>FarmGuard | Smart Farming</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="AI-Powered Crop Disease Detection and Farming Solutions" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <header className="hero">
+      <main className="hero">
         <nav className="navbar">
           <div className="logo">FarmGuard</div>
           <ul className="nav-links">
@@ -31,16 +33,23 @@ export default function Home() {
             </div>
           </div>
           <div className="image">
-            <Image src="/hero-illustration.png" alt="AI Farm" width={400} height={400} />
+            <Image
+              src="/hero-illustration.png"
+              alt="AI Farming"
+              width={400}
+              height={400}
+              priority
+            />
           </div>
         </div>
-      </header>
+      </main>
 
       <style jsx>{`
         .hero {
           background: #37517e;
           color: white;
           padding: 2rem;
+          min-height: 100vh;
         }
         .navbar {
           display: flex;
@@ -72,12 +81,10 @@ export default function Home() {
           justify-content: space-between;
           align-items: center;
           margin-top: 3rem;
+          flex-wrap: wrap;
         }
         .text h1 {
           font-size: 2rem;
-        }
-        .text p {
-          margin-top: 1rem;
         }
         .buttons {
           margin-top: 1.5rem;
